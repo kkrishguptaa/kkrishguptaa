@@ -26,29 +26,29 @@ Krish is a DevOps engineer, with a full-stack development background. He has man
   <p align="center">
     <picture>
       <source
-        width=49%
+        width=400
         srcset="https://github-readme-stats.vercel.app/api?username=kkrishguptaa&show_icons=true&locale=en&count_private=true&include_all_commits=true&title_color=F5E1DF&text_color=F5E1DF&icon_color=F5E1DF&border_color=00000000&bg_color=0E1627&ring_color=F5E1DF&border_radius=0"
         media="(prefers-color-scheme: dark)"
         />
       <source
-        width=49%
+        width=400
         srcset="https://github-readme-stats.vercel.app/api?username=kkrishguptaa&show_icons=true&locale=en&count_private=true&include_all_commits=true&title_color=0E1627&text_color=0E1627&icon_color=0E1627&border_color=E4C5C2&bg_color=F5E1DF&ring_color=0E1627&border_radius=0"
         media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
         />
-      <img width=49% src="https://github-readme-stats.vercel.app/api?username=kkrishguptaa&show_icons=true&locale=en&count_private=true&include_all_commits=true&title_color=0E1627&text_color=0E1627&icon_color=0E1627&border_color=E4C5C2&bg_color=F5E1DF&ring_color=0E1627&border_radius=0" />
+      <img width=400 src="https://github-readme-stats.vercel.app/api?username=kkrishguptaa&show_icons=true&locale=en&count_private=true&include_all_commits=true&title_color=0E1627&text_color=0E1627&icon_color=0E1627&border_color=E4C5C2&bg_color=F5E1DF&ring_color=0E1627&border_radius=0" />
     </picture>
     <picture>
       <source
-        width=49%
+        width=400
         srcset="https://github-readme-streak-stats.herokuapp.com?user=kkrishguptaa&border_radius=0&background=0E1627&border=00000000&stroke=7F6169&ring=F5E1DF&fire=F5E1DF&currStreakNum=F5E1DF&sideNums=F5E1DF&currStreakLabel=F5E1DF&sideLabels=F5E1DF&dates=F5E1DF&excludeDaysLabel=F5E1DF"
         media="(prefers-color-scheme: dark)"
         />
       <source
-        width=49%
+        width=400
         srcset="https://github-readme-streak-stats.herokuapp.com?user=kkrishguptaa&border_radius=0&background=F5E1DF&border=E4C5C2&stroke=E4C5C2&ring=0E1627&fire=0E1627&currStreakNum=0E1627&sideNums=0E1627&currStreakLabel=0E1627&sideLabels=0E1627&dates=0E1627&excludeDaysLabel=0E1627"
         media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
         />
-      <img width=49% src="https://github-readme-streak-stats.herokuapp.com?user=kkrishguptaa&border_radius=0&background=F5E1DF&border=E4C5C2&stroke=E4C5C2&ring=0E1627&fire=0E1627&currStreakNum=0E1627&sideNums=0E1627&currStreakLabel=0E1627&sideLabels=0E1627&dates=0E1627&excludeDaysLabel=0E1627" />
+      <img width=400 src="https://github-readme-streak-stats.herokuapp.com?user=kkrishguptaa&border_radius=0&background=F5E1DF&border=E4C5C2&stroke=E4C5C2&ring=0E1627&fire=0E1627&currStreakNum=0E1627&sideNums=0E1627&currStreakLabel=0E1627&sideLabels=0E1627&dates=0E1627&excludeDaysLabel=0E1627" />
     </picture>
   </p>
 </details>
@@ -88,8 +88,58 @@ Markdown   10 mins         █░░░░░░░░░░░░░░░░�
   <summary>📊 ― GitHub Interest Stats</summary>
   <br />
   <p align="center">
-<img src="https://stats.quine.sh/kkrishguptaa/github?theme=dark" alt="" height="180" /> <img src="https://stats.quine.sh/kkrishguptaa/dependencies?theme=dark" alt="" height="180" />
-<img src="https://stats.quine.sh/kkrishguptaa/topics-over-time?theme=dark" alt="" height="180" /> <img src="https://stats.quine.sh/kkrishguptaa/languages-over-time?theme=dark" alt="" height="180" />
+      <picture>
+          <source
+              width=400
+              srcset="https://stats.quira.sh/kkrishguptaa/github?theme=dark"
+              media="(prefers-color-scheme: dark)"
+              />
+          <source
+              width=400
+              srcset="https://stats.quira.sh/kkrishguptaa/github?theme=light"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+              />
+          <img width=400 src="https://stats.quira.sh/kkrishguptaa/github?theme=light" />
+      </picture>
+      <picture>
+          <source
+              width=400
+              srcset="https://stats.quira.sh/kkrishguptaa/dependencies?theme=dark"
+              media="(prefers-color-scheme: dark)"
+              />
+          <source
+              width=400
+              srcset="https://stats.quira.sh/kkrishguptaa/dependencies?theme=light"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+              />
+          <img width=400 src="https://stats.quira.sh/kkrishguptaa/dependencies?theme=light" />
+      </picture>
+      <picture>
+          <source
+              width=400
+              srcset="https://stats.quira.sh/kkrishguptaa/topics-over-time?theme=dark"
+              media="(prefers-color-scheme: dark)"
+              />
+          <source
+              width=400
+              srcset="https://stats.quira.sh/kkrishguptaa/topics-over-time?theme=light"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+              />
+          <img width=400 src="https://stats.quira.sh/kkrishguptaa/topics-over-time?theme=light" />
+      </picture>
+      <picture>
+          <source
+              width=400
+              srcset="https://stats.quira.sh/kkrishguptaa/languages-over-time?theme=dark"
+              media="(prefers-color-scheme: dark)"
+              />
+          <source
+              width=400
+              srcset="https://stats.quira.sh/kkrishguptaa/languages-over-time?theme=light"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+              />
+          <img width=400 src="https://stats.quira.sh/kkrishguptaa/languages-over-time?theme=light" />
+      </picture>
   </p>
 </details>
 </div>
@@ -98,8 +148,8 @@ Markdown   10 mins         █░░░░░░░░░░░░░░░░�
 <details>
   <summary>🎴 ― Cool Cards</summary>
   <br />
-  <p align="center">
-    <a href="https://app.daily.dev/kkrishguptaa"><img src="https://api.daily.dev/devcards/v2/ss6WFJc85JAQGKNKiGWSL.png?type=default&r=42q" width="356" alt="krish's Dev Card"/></a>
+  <p>
+    <a href="https://app.daily.dev/kkrishguptaa"><img src="https://api.daily.dev/devcards/v2/ss6WFJc85JAQGKNKiGWSL.png?type=default&r=42q" width="178" alt="krish's Dev Card"/></a>
   </p>
 </details>
 </div>
