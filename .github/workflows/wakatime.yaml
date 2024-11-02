@@ -5,6 +5,7 @@ on:
   schedule:
     - cron: "0 0 * * *"
   push:
+   branches: [main]
 
 jobs:
   update-readme:
@@ -29,6 +30,8 @@ jobs:
       - name: Create PR
         run: |
           gh pr create --base main --head ${{ env.PR_BRANCH }} --title 'chore: update wakatime stats [skip-ci]' --body "" >/dev/null 2>&1
+        env:
+          GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
       - name: Merge PR
         run: |
           gh pr view ${{ env.PR_BRANCH }} >/dev/null 2>&1 && gh pr merge --squash --admin ${{ env.PR_BRANCH }} || echo "PR does not exist."
