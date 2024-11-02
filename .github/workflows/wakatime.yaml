@@ -27,14 +27,31 @@ jobs:
           LANG_COUNT: 10 # optional
           TARGET_BRANCH: ${{ env.PR_BRANCH }}
           COMMIT_MESSAGE: "chore: update wakatime stats"
-      - name: Create PR
+      - name: Check Changes
+        id: check-remote-changes
         run: |
-          gh pr create --base main --head ${{ env.PR_BRANCH }} --title 'chore: update wakatime stats [skip-ci]' --body "" >/dev/null 2>&1
+          LATEST_REMOTE_SHA=$(gh api repos/${{ github.repository }}/commits/${{ env.PR_BRANCH }} --jq .sha)
+          
+          if [ "${{ github.sha }}" != "$LATEST_REMOTE_SHA" ]; then
+            echo "There are changes on the remote repository."
+            echo "::set-output name=has_changes::true"
+          else
+            echo "No changes detected on the remote repository."
+            echo "::set-output name=has_changes::false"
+          fi
+      - name: Create PR
+        if: ${{ steps.check-remote-changes.outputs.has_changes }} == true
+        run: |
+          gh pr create --base main --head ${{ env.PR_BRANCH }} --title 'chore: update wakatime stats [skip-ci]' --body ""
         env:
           GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
       - name: Merge PR
+        if: ${{ steps.check-remote-changes.outputs.has_changes }} == true
         run: |
-          gh pr view ${{ env.PR_BRANCH }} >/dev/null 2>&1 && gh pr merge --squash --admin ${{ env.PR_BRANCH }} || echo "PR does not exist."
-          git push -d origin ${{ env.PR_BRANCH }} >/dev/null 2>&1
+          gh pr view ${{ env.PR_BRANCH }}
+          gh pr merge --squash --admin ${{ env.PR_BRANCH }}
         env:
           GH_TOKEN: ${{ secrets.GH_OWNER_TOKEN }}
+      - name: Delete Branch
+        run: |
+          git push -d origin ${{ env.PR_BRANCH }}
