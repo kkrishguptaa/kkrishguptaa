@@ -30,30 +30,29 @@ jobs:
           TARGET_BRANCH: ${{ env.PR_BRANCH }}
           COMMIT_MESSAGE: "chore: update wakatime stats"
 
-      - name: Check Changes
-        id: check-remote-changes
+      - name: Check for New Commits on PR Branch
+        id: check-new-commits
         run: |
-          LATEST_REMOTE_SHA=$(gh api repos/${{ github.repository }}/commits/${{ env.PR_BRANCH }} --jq .sha)
-          
-          if [ "${{ github.sha }}" != "$LATEST_REMOTE_SHA" ]; then
-            echo "There are changes on the remote repository."
+          # Fetch the latest commit SHA for the PR branch and compare it with the main branch
+          LATEST_MAIN_SHA=$(git rev-parse origin/main)
+          LATEST_PR_SHA=$(git rev-parse HEAD)
+
+          # Check if there’s a difference
+          if [ "$LATEST_MAIN_SHA" != "$LATEST_PR_SHA" ]; then
             echo "has_changes=true" >> $GITHUB_ENV
           else
-            echo "No changes detected on the remote repository."
             echo "has_changes=false" >> $GITHUB_ENV
           fi
-        env:
-          GH_TOKEN: ${{ github.token }} 
 
       - name: Create PR
-        if: ${{ env.has_changes }} == 'true'
+        if: env.has_changes == 'true'
         run: |
           gh pr create --base main --head ${{ env.PR_BRANCH }} --title 'chore: update wakatime stats [skip-ci]' --body ""
         env:
           GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
 
       - name: Merge PR
-        if: ${{ env.has_changes }} == 'true'
+        if: env.has_changes == 'true'
         run: |
           gh pr view ${{ env.PR_BRANCH }}
           gh pr merge --squash --admin ${{ env.PR_BRANCH }}
@@ -61,5 +60,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_OWNER_TOKEN }}
 
       - name: Delete Branch
+        if: env.has_changes == 'true'
         run: |
           git push -d origin ${{ env.PR_BRANCH }}
