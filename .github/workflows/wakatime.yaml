@@ -60,6 +60,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_OWNER_TOKEN }}
 
       - name: Delete Branch
-        if: env.has_changes == 'true'
         run: |
           git push -d origin ${{ env.PR_BRANCH }}
