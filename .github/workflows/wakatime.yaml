@@ -28,9 +28,8 @@ jobs:
           COMMIT_MESSAGE: "chore: update wakatime stats"
       - name: Create PR
         run: |
-          git push origin ${{ env.PR_BRANCH }}
           gh pr create --base main --head ${{ env.PR_BRANCH }} --title 'chore: update wakatime stats [skip-ci]' --body "" >/dev/null 2>&1
           gh pr view ${{ env.PR_BRANCH }} >/dev/null 2>&1 && gh pr merge --squash --admin ${{ env.PR_BRANCH }} || echo "PR does not exist."
-          git push -d origin ${{ env.PR_BRANCH }}
+          git push -d origin ${{ env.PR_BRANCH }} >/dev/null 2>&1
         env:
           GH_TOKEN: ${{ secrets.GH_OWNER_TOKEN }}
