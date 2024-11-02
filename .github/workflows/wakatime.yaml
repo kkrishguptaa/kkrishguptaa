@@ -39,6 +39,8 @@ jobs:
             echo "No changes detected on the remote repository."
             echo "::set-output name=has_changes::false"
           fi
+        env:
+          GH_TOKEN: ${{ github.token }} 
       - name: Create PR
         if: ${{ steps.check-remote-changes.outputs.has_changes }} == true
         run: |
