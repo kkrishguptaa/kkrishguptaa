@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: "0 0 * * *"
   push:
-   branches: [main]
+    branches: [main]
 
 jobs:
   update-readme:
@@ -15,18 +15,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      
       - name: Create Branch
         id: branch
         run: |
           git checkout -b ${{ env.PR_BRANCH }}
           git push origin ${{ env.PR_BRANCH }}
+
       - uses: athul/waka-readme@master
         with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_TOKEN }} # required
-          TIME_RANGE: all_time # optional
-          LANG_COUNT: 10 # optional
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_TOKEN }}
+          TIME_RANGE: all_time
+          LANG_COUNT: 10
           TARGET_BRANCH: ${{ env.PR_BRANCH }}
           COMMIT_MESSAGE: "chore: update wakatime stats"
+
       - name: Check Changes
         id: check-remote-changes
         run: |
@@ -34,26 +37,29 @@ jobs:
           
           if [ "${{ github.sha }}" != "$LATEST_REMOTE_SHA" ]; then
             echo "There are changes on the remote repository."
-            echo "::set-output name=has_changes::true"
+            echo "has_changes=true" >> $GITHUB_ENV
           else
             echo "No changes detected on the remote repository."
-            echo "::set-output name=has_changes::false"
+            echo "has_changes=false" >> $GITHUB_ENV
           fi
         env:
           GH_TOKEN: ${{ github.token }} 
+
       - name: Create PR
-        if: ${{ steps.check-remote-changes.outputs.has_changes }} == true
+        if: ${{ env.has_changes }} == 'true'
         run: |
           gh pr create --base main --head ${{ env.PR_BRANCH }} --title 'chore: update wakatime stats [skip-ci]' --body ""
         env:
           GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+
       - name: Merge PR
-        if: ${{ steps.check-remote-changes.outputs.has_changes }} == true
+        if: ${{ env.has_changes }} == 'true'
         run: |
           gh pr view ${{ env.PR_BRANCH }}
           gh pr merge --squash --admin ${{ env.PR_BRANCH }}
         env:
           GH_TOKEN: ${{ secrets.GH_OWNER_TOKEN }}
+
       - name: Delete Branch
         run: |
           git push -d origin ${{ env.PR_BRANCH }}
