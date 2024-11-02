@@ -26,20 +26,11 @@ jobs:
           LANG_COUNT: 10 # optional
           TARGET_BRANCH: ${{ env.PR_BRANCH }}
           COMMIT_MESSAGE: "chore: update wakatime stats"
-      - name: Check if there are changes
-        id: changes
-        uses: UnicornGlobal/has-changes-action@ea00e6f831a9e785271645729fa251907b314707 # v1.0.12
       - name: Create PR
-        if: steps.changes.outputs.changed == 1
         run: |
           git push origin ${{ env.PR_BRANCH }}
-          gh pr create --base main --head ${{ env.PR_BRANCH }} --title 'chore: update wakatime stats [skip-ci]' --body ""
-        env:
-          GH_TOKEN: ${{ github.token }}
-      - name: Merge PR
-        if: steps.changes.outputs.changed == 1
-        run: |
-          gh pr merge --squash --admin ${{ env.PR_BRANCH }}
+          gh pr create --base main --head ${{ env.PR_BRANCH }} --title 'chore: update wakatime stats [skip-ci]' --body "" >/dev/null 2>&1
+          gh pr view ${{ env.PR_BRANCH }} >/dev/null 2>&1 && gh pr merge --squash --admin ${{ env.PR_BRANCH }} || echo "PR does not exist."
           git push -d origin ${{ env.PR_BRANCH }}
         env:
           GH_TOKEN: ${{ secrets.GH_OWNER_TOKEN }}
