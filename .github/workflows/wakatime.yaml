@@ -18,6 +18,7 @@ jobs:
         id: branch
         run: |
           git checkout -b ${{ env.PR_BRANCH }}
+          git push origin ${{ env.PR_BRANCH }}
       - uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_TOKEN }} # required
@@ -38,6 +39,7 @@ jobs:
       - name: Merge PR
         if: steps.changes.outputs.changed == 1
         run: |
-          gh pr merge --squash --admin --delete-branch ${{ env.PR_BRANCH }}
+          gh pr merge --squash --admin ${{ env.PR_BRANCH }}
+          git push -d origin ${{ env.PR_BRANCH }}
         env:
           GH_TOKEN: ${{ secrets.GH_OWNER_TOKEN }}
