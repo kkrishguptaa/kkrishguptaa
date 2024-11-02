@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
+  push:
 
 jobs:
   update-readme:
@@ -15,10 +16,8 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Create Branch
         id: branch
-        if: steps.changes.outputs.changed == 1
         run: |
           git checkout -b ${{ env.PR_BRANCH }}
-          git push origin ${{ env.PR_BRANCH }}
       - uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_TOKEN }} # required
@@ -32,6 +31,7 @@ jobs:
       - name: Create PR
         if: steps.changes.outputs.changed == 1
         run: |
+          git push origin ${{ env.PR_BRANCH }}
           gh pr create --base main --head ${{ env.PR_BRANCH }} --title 'chore: update wakatime stats [skip-ci]' --body ""
         env:
           GH_TOKEN: ${{ github.token }}
