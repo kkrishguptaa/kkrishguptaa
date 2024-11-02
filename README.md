@@ -73,8 +73,9 @@ Krish is a DevOps engineer, with a full-stack development background. He has man
 <!--START_SECTION:waka-->
 
 ```txt
-Other      4 hrs 37 mins   ████████████████████████░   96.33 %
-Markdown   10 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.67 %
+Markdown   6 hrs 22 mins   ██████████████▒░░░░░░░░░░   56.96 %
+Other      4 hrs 37 mins   ██████████▒░░░░░░░░░░░░░░   41.37 %
+CSS        11 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.67 %
 ```
 
 <!--END_SECTION:waka-->
