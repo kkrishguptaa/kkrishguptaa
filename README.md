@@ -23,7 +23,7 @@ Krish is a DevOps engineer, with a full-stack development background. He has man
 <details>
   <summary>📈 ― Show GitHub Stats</summary>
   <br />
-  <p align="center">
+  <p>
     <picture>
       <source
         width=400
@@ -58,8 +58,8 @@ Krish is a DevOps engineer, with a full-stack development background. He has man
 <details>
   <summary>🏆 ― GitHub Profile Trophy</summary>
   <br />
-  <p align="center">
-    <img align="center" src="https://github-profile-trophy.vercel.app/?username=kkrishguptaa&row=1&no-frame=true&no-bg=true" />
+  <p>
+    <img src="https://github-profile-trophy.vercel.app/?username=kkrishguptaa&row=1&no-frame=true&no-bg=true" />
   </p>
 </details>
 </div>
@@ -88,7 +88,7 @@ CSS        11 mins         ▒░░░░░░░░░░░░░░░░�
 <details>
   <summary>📊 ― GitHub Interest Stats</summary>
   <br />
-  <p align="center">
+  <p>
       <picture>
           <source
               width=400
