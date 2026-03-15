@@ -25,7 +25,7 @@ jobs:
       - uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_TOKEN }}
-          API_BASE_URL: https://hackatime.hackclub.com/api/hackatime/v1
+          API_BASE_URL: https://hackatime.hackclub.com/api
           TIME_RANGE: all_time
           LANG_COUNT: 10
           TARGET_BRANCH: ${{ env.PR_BRANCH }}
