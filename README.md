@@ -14,7 +14,7 @@
   </p>
 </div>
 
-Krish is a DevOps engineer, with a full-stack development background. He has managed several communities, open-source projects, and developer relations programs.
+Krish is a DevOps engineer with a full-stack development background. He has managed several communities, open-source projects, and developer relations programs.
 
 - Creator of reseter.css ― the modern CSS reset (3.3m+ yearly cdn hits, 70k+ npm installs).
 - On a mission to promote no-code contributions in Open Source Software.
@@ -86,75 +86,10 @@ CSS        11 mins         ▒░░░░░░░░░░░░░░░░�
 
 <div>
 <details>
-  <summary>📊 ― GitHub Interest Stats</summary>
-  <br />
-  <p>
-      <picture>
-          <source
-              width=400
-              srcset="https://stats.quira.sh/kkrishguptaa/github?theme=dark"
-              media="(prefers-color-scheme: dark)"
-              />
-          <source
-              width=400
-              srcset="https://stats.quira.sh/kkrishguptaa/github?theme=light"
-              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-              />
-          <img width=400 src="https://stats.quira.sh/kkrishguptaa/github?theme=light" />
-      </picture>
-      <picture>
-          <source
-              width=400
-              srcset="https://stats.quira.sh/kkrishguptaa/dependencies?theme=dark"
-              media="(prefers-color-scheme: dark)"
-              />
-          <source
-              width=400
-              srcset="https://stats.quira.sh/kkrishguptaa/dependencies?theme=light"
-              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-              />
-          <img width=400 src="https://stats.quira.sh/kkrishguptaa/dependencies?theme=light" />
-      </picture>
-      <picture>
-          <source
-              width=400
-              srcset="https://stats.quira.sh/kkrishguptaa/topics-over-time?theme=dark"
-              media="(prefers-color-scheme: dark)"
-              />
-          <source
-              width=400
-              srcset="https://stats.quira.sh/kkrishguptaa/topics-over-time?theme=light"
-              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-              />
-          <img width=400 src="https://stats.quira.sh/kkrishguptaa/topics-over-time?theme=light" />
-      </picture>
-      <picture>
-          <source
-              width=400
-              srcset="https://stats.quira.sh/kkrishguptaa/languages-over-time?theme=dark"
-              media="(prefers-color-scheme: dark)"
-              />
-          <source
-              width=400
-              srcset="https://stats.quira.sh/kkrishguptaa/languages-over-time?theme=light"
-              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-              />
-          <img width=400 src="https://stats.quira.sh/kkrishguptaa/languages-over-time?theme=light" />
-      </picture>
-  </p>
-</details>
-</div>
-
-<div>
-<details>
   <summary>🎴 ― Cool Cards</summary>
   <br />
   <p>
     <a href="https://app.daily.dev/kkrishguptaa"><img src="https://api.daily.dev/devcards/v2/ss6WFJc85JAQGKNKiGWSL.png?type=default&r=42q" width="178" alt="krish's Dev Card"/></a>
   </p>
 </details>
-</div>
-
-<div align="right">
-<p><a href="https://tilde.club/~xkrishguptaa/"><img src="http://tilde.club/~zarate/tildeclub.gif" border="0" width="88" height="31" alt="Tilde Club Badge"></a></p>
 </div>
